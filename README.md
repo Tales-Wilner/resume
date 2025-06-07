@@ -1,4 +1,5 @@
 Currículo - Tales Wilner
+
 Este repositório contém o código-fonte do meu currículo pessoal, desenvolvido em HTML e estilizado com Tailwind CSS.
 
 O objetivo deste projeto é apresentar minhas informações profissionais de forma clara, moderna e acessível em um formato de página da web.
