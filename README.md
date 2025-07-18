@@ -1,10 +1,10 @@
-<h3>Currículo - Tales Wilner</h3>
+<h1>Currículo - Tales Wilner</h1>
+
+<h3>🚀 Como Visualizar</h3>
 
 Este repositório contém o código-fonte do meu currículo pessoal, desenvolvido em HTML e estilizado com Tailwind CSS.
 
 O objetivo deste projeto é apresentar minhas informações profissionais de forma clara, moderna e acessível em um formato de página da web.
-
-<h3>🚀 Como Visualizar</h3>
 
 A versão online deste currículo está hospedada no GitHub Pages e pode ser acessada através do seguinte link:
 
