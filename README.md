@@ -25,6 +25,8 @@ Font Awesome: Para os ícones.
 
 Google Fonts: Para a tipografia (família de fontes 'Inter').
 
+JavaScript: Para o sistema de alternância de idiomas (PT/EN) sem dependências externas.
+
 
 <h3>👨‍💻 Sobre Mim</h3>
 
