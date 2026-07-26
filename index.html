@@ -10,13 +10,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .container {
-            max-width: 900px;
-        }
+        body { font-family: 'Inter', sans-serif; background-color: #f8f9fa; }
+        .container { max-width: 900px; }
         .section-title {
             border-bottom: 2px solid #e5e7eb;
             padding-bottom: 8px;
@@ -25,238 +20,342 @@
             font-weight: 700;
             color: #111827;
         }
-        .job .company {
-            font-weight: 700;
-            color: #111827;
-        }
-        .job .date {
-            color: #6b7280;
-            font-size: 0.9rem;
-        }
-        .job .role {
-            font-weight: 500;
-            color: #374151;
-        }
-        .icon {
-            color: #4338ca;
-        }
-        /* Badge ATS */
-        .ats-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 5px;
-            font-size: 0.7rem;
-            font-weight: 600;
-            letter-spacing: 0.06em;
-            text-transform: uppercase;
-            background-color: #eef2ff;
-            color: #4338ca;
-            border: 1px solid #c7d2fe;
-            border-radius: 999px;
-            padding: 2px 10px;
-            margin-left: 8px;
-            vertical-align: middle;
-        }
-        
-        .keyword-strip {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 10px;
-        }
+        .job .company { font-weight: 700; color: #111827; }
+        .job .date { color: #6b7280; font-size: 0.9rem; }
+        .job .role { font-weight: 500; color: #374151; }
+        .icon { color: #4338ca; }
+        .keyword-strip { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
         .keyword-strip span {
-            font-size: 0.72rem;
-            font-weight: 500;
-            background-color: #f0fdf4;
-            color: #166534;
-            border: 1px solid #bbf7d0;
+            font-size: 0.72rem; font-weight: 500;
+            background-color: #f0fdf4; color: #166534;
+            border: 1px solid #bbf7d0; border-radius: 999px; padding: 2px 10px;
+        }
+        .job-new { border-left: 3px solid #4338ca; padding-left: 14px; }
+
+        /* Toggle button */
+        .lang-toggle {
+            display: flex;
+            align-items: center;
+            gap: 0;
+            border: 1.5px solid #4338ca;
             border-radius: 999px;
-            padding: 2px 10px;
+            overflow: hidden;
+            width: fit-content;
+            margin-bottom: 2rem;
+            font-size: 0.8rem;
+            font-weight: 600;
         }
-        
-        .job-new {
-            border-left: 3px solid #4338ca;
-            padding-left: 14px;
+        .lang-toggle button {
+            padding: 5px 18px;
+            cursor: pointer;
+            border: none;
+            background: white;
+            color: #4338ca;
+            transition: background 0.2s, color 0.2s;
         }
+        .lang-toggle button.active {
+            background: #4338ca;
+            color: white;
+        }
+        .lang-toggle button:focus { outline: none; }
+
+        .lang-pt [data-lang="en"],
+        .lang-en [data-lang="pt"] { display: none !important; }
     </style>
 </head>
 <body class="bg-gray-100 p-4 sm:p-8">
-    <div class="container mx-auto bg-white shadow-lg rounded-lg p-8 sm:p-12">
+<div class="container mx-auto bg-white shadow-lg rounded-lg p-8 sm:p-12">
 
-        <!-- Cabeçalho -->
-        <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
-            <div>
-                <h1 class="text-4xl sm:text-5xl font-bold text-gray-800">Tales Wilner</h1>
-                <p class="text-xl font-medium mt-1 bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">Content Moderation & Trust and Safety | CX & Social Listening</p>
-            </div>
-            <div class="text-sm text-gray-600 mt-6 sm:mt-0 sm:text-right">
-                <a href="mailto:tales.wilner@hotmail.com" class="flex items-center justify-start sm:justify-end mb-2 hover:text-indigo-700">
-                    <i class="fas fa-envelope mr-2 icon"></i>
-                    tales.wilner@hotmail.com
-                </a>
-                <a href="#" class="flex items-center justify-start sm:justify-end mb-2 hover:text-indigo-700">
-                    <i class="fas fa-phone mr-2 icon"></i>
-                    (11) 95437-9465
-                </a>
-                <a href="https://www.linkedin.com/in/tales-wilner-95262a97" target="_blank" class="flex items-center justify-start sm:justify-end mb-2 hover:text-indigo-700">
-                    <i class="fab fa-linkedin mr-2 icon"></i>
-                    linkedin.com/in/tales-wilner
-                </a>
-                <div class="flex items-center justify-start sm:justify-end">
-                    <i class="fas fa-map-marker-alt mr-2 icon"></i>
-                    São Paulo, SP - Brasil
-                </div>
-            </div>
-        </header>
-
-        <!-- Resumo -->
-        <section class="mb-10">
-            <h2 class="section-title">Resumo</h2>
-            <p class="text-gray-700 leading-relaxed">
-                Profissional com mais de 8 anos de experiência em Customer Experience, Social Listening e moderação de conteúdo, com atuação em operações de Trust &amp; Safety para plataformas de redes sociais. Experiência sólida na aplicação de políticas de uso aceitável (AUP), escalação de casos sensíveis e gestão de relacionamento digital em ambientes de alto volume e KPI. Complementa o perfil com formação em Análise e Desenvolvimento de Sistemas (FATEC) e UX/UI Design, unindo visão estratégica de CX à construção de soluções digitais centradas no usuário.
-            </p>
-        </section>
-
-        <!-- Experiência Profissional -->
-        <section class="mb-10">
-            <h2 class="section-title">Experiência Profissional</h2>
-            <div class="space-y-8">
-
-                
-                <div class="job job-new">
-                    <p class="company">Teleperformance (TP)</p>
-                    <p class="role">Moderador de Conteúdo | Trust &amp; Safety — Redes Sociais</p>
-                    <p class="date">2025 – atual · São Paulo, SP</p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
-                        <li>Revisão e classificação de conteúdo gerado por usuários (UGC) aplicando políticas de uso aceitável (AUP) e community guidelines para identificar violações como discurso de ódio, desinformação e spam.</li>
-                        <li>Escalação de casos sensíveis para equipes de Trust &amp; Safety, com tomada de decisão consistente em ambiente de alto volume, KPI e monitoramento contínuo de qualidade (QA).</li>
-                        <li>Gestão de filas de moderação via dashboards e queues internos, garantindo cumprimento de SLA e rastreamento de casos.</li>
-                    </ul>
-                    <div class="keyword-strip">
-                        <span>Content Moderation</span>
-                        <span>Trust &amp; Safety</span>
-                        <span>Policy Enforcement</span>
-                        <span>UGC</span>
-                    </div>
-
-                </div>
-
-                <div class="job">
-                    <p class="company">Jotacom - The Cross Performance Agency</p>
-                    <p class="role">Analista de Interações e Monitoramento | Social Listening</p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
-                        <li>Monitoramento e análise de menções em redes sociais (TikTok, Instagram, X, Facebook) com foco em identificação de tendências, sentimento e oportunidades de engajamento.</li>
-                        <li>Desenvolvimento de brand persona, arquitetura de tags e FAQs para padronização do tom de voz e consistência nas interações digitais.</li>
-                        <li>Gestão de crises em tempo real e elaboração de relatórios de performance (quick reports e mensais) com insights acionáveis para tomada de decisão.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <p class="company">Atento Brasil</p>
-                    <p class="role">Analista de Mídias Sociais</p>
-                    <p class="date">junho de 2018 - abril de 2024</p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
-                        <li>Gestão de relacionamento digital e engajamento em campanhas nas principais redes sociais, aplicando brand persona e estratégias de Customer Experience (CX) para maximizar a satisfação e conversão.</li>
-                        <li>Uso de ferramentas de CRM (Salesforce e Keepcon) para rastreamento de interações, gestão de filas de atendimento e extração de relatórios de performance.</li>
-                        <li>Auditoria de qualidade (QA) e suporte ao consumidor, garantindo aderência a SLAs e padrões internos de atendimento em operação de alto volume.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <p class="company">Atento Brasil</p>
-                    <p class="role">Analista de Relacionamento Digital</p>
-                    <p class="date">maio de 2017 - junho de 2018</p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
-                        <li>Suporte ao cliente multicanal (chat, e-mail, telefone) com foco em resolução de problemas, retenção e satisfação do usuário (CSAT).</li>
-                        <li>Gestão de filas de atendimento, extração de relatórios e auditorias de qualidade (QA) para garantia de SLA e performance operacional.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <p class="company">Atento Brasil</p>
-                    <p class="role">Analista de Relacionamento com o Cliente (SAC)</p>
-                    <p class="date">abril de 2016 - maio de 2017</p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
-                        <li>Atendimento ativo e receptivo (cliente Sem Parar) com foco em resolução de problemas, retenção e fidelização, além de suporte e auditoria de qualidade junto à equipe.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <p class="company">Alpargatas</p>
-                    <p class="role">Assistente de Vendas (Temporário)</p>
-                    <p class="date">dezembro de 2013 - fevereiro de 2014</p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
-                        <li>Atendimento ao público nacional e estrangeiro com foco em customer experience, conversão de vendas e organização de estoque.</li>
-                    </ul>
-                </div>
-
-                <div class="job">
-                    <p class="company">Drastosa S/A</p>
-                    <p class="role">Assistente de Suporte Técnico</p>
-                    <p class="date">janeiro de 2011 - outubro de 2011</p>
-                    <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
-                        <li>Suporte técnico em hardware e software: diagnóstico, reparo e manutenção de equipamentos, instalação e configuração de redes locais (LAN/Wi-Fi) e sistemas operacionais.</li>
-                    </ul>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- Formação Acadêmica -->
-        <section class="mb-10">
-            <h2 class="section-title">Formação Acadêmica</h2>
-            <div class="space-y-4">
-                <div>
-                    <p class="font-bold text-gray-800">Análise e Desenvolvimento de Sistemas</p>
-                    <p class="text-gray-600">Faculdade de Tecnologia de São Paulo - FATEC-SP</p>
-                    <p class="text-sm text-gray-500">Conclusão prevista: dezembro de 2027</p>
-                </div>
-                <div>
-                    <p class="font-bold text-gray-800">UX/UI Design e Desenvolvimento Web</p>
-                    <p class="text-gray-600">Origamid</p>
-                    <p class="text-sm text-gray-500">Conclusão prevista: dezembro de 2026</p>
-                </div>
-                <div>
-                    <p class="font-bold text-gray-800">Técnico em Química</p>
-                    <p class="text-gray-600">ETEC Osasco II</p>
-                    <p class="text-sm text-gray-500">Concluído em dezembro de 2013</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Competências e Idiomas -->
-        <section>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h2 class="section-title">Principais Competências</h2>
-                    <div class="flex flex-wrap gap-2">
-                        <!-- Moderação / Trust & Safety — roxo -->
-                        <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Content Moderation</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Trust &amp; Safety</span>
-                        <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Policy Enforcement</span>
-                        <!-- TI / Dev — verde -->
-                        <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
-                        <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Java</span>
-                        <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Front-End</span>
-                        <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Back-End</span>
-                        <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">UX/UI Design</span>
-                        <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Git</span>
-                        <!-- CX / Social — cinza -->
-                        <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Social Listening</span>
-                        <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Customer Experience</span>
-                        <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Gestão de Crises</span>
-                        <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">CRM (Salesforce, Keepcon)</span>
-                    </div>
-                </div>
-                <div>
-                    <h2 class="section-title">Idiomas</h2>
-                    <div class="text-gray-700">
-                        <p>Inglês: leitura avançada de documentação técnica; comunicação oral e auditiva em nível intermediário.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
+    <!-- Toggle -->
+    <div class="lang-toggle">
+        <button id="btn-pt" class="active" onclick="setLang('pt')">🇧🇷 PT</button>
+        <button id="btn-en" onclick="setLang('en')">🇺🇸 EN</button>
     </div>
+
+    <!-- Cabeçalho -->
+    <header class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-12">
+        <div>
+            <h1 class="text-4xl sm:text-5xl font-bold text-gray-800">Tales Wilner</h1>
+            <p class="text-xl font-medium mt-1 bg-gradient-to-r from-indigo-600 to-blue-500 bg-clip-text text-transparent">
+                Content Moderation & Trust and Safety | CX & Social Listening
+            </p>
+        </div>
+        <div class="text-sm text-gray-600 mt-6 sm:mt-0 sm:text-right">
+            <a href="mailto:tales.wilner@hotmail.com" class="flex items-center justify-start sm:justify-end mb-2 hover:text-indigo-700">
+                <i class="fas fa-envelope mr-2 icon"></i>tales.wilner@hotmail.com
+            </a>
+            <a href="#" class="flex items-center justify-start sm:justify-end mb-2 hover:text-indigo-700">
+                <i class="fas fa-phone mr-2 icon"></i>(11) 95437-9465
+            </a>
+            <a href="https://www.linkedin.com/in/tales-wilner-95262a97" target="_blank" class="flex items-center justify-start sm:justify-end mb-2 hover:text-indigo-700">
+                <i class="fab fa-linkedin mr-2 icon"></i>linkedin.com/in/tales-wilner
+            </a>
+            <div class="flex items-center justify-start sm:justify-end">
+                <i class="fas fa-map-marker-alt mr-2 icon"></i>
+                <span data-lang="pt">São Paulo, SP - Brasil</span>
+                <span data-lang="en">São Paulo, SP - Brazil</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Resumo -->
+    <section class="mb-10">
+        <h2 class="section-title">
+            <span data-lang="pt">Resumo</span>
+            <span data-lang="en">Summary</span>
+        </h2>
+        <p data-lang="pt" class="text-gray-700 leading-relaxed">
+            Profissional com mais de 8 anos de experiência em Customer Experience, Social Listening e moderação de conteúdo, com atuação em operações de Trust &amp; Safety para plataformas de redes sociais. Experiência sólida na aplicação de políticas de uso aceitável (AUP), escalação de casos sensíveis e gestão de relacionamento digital em ambientes de alto volume e KPI. Complementa o perfil com formação em Análise e Desenvolvimento de Sistemas (FATEC) e UX/UI Design, unindo visão estratégica de CX à construção de soluções digitais centradas no usuário.
+        </p>
+        <p data-lang="en" class="text-gray-700 leading-relaxed">
+            Professional with over 8 years of experience in Customer Experience, Social Listening, and content moderation, with hands-on work in Trust &amp; Safety operations for social media platforms. Solid background in applying Acceptable Use Policies (AUP), escalating sensitive cases, and managing digital relationships in high-volume, KPI-driven environments. Complements this profile with a degree in Systems Analysis and Development (FATEC) and UX/UI Design, combining strategic CX expertise with the ability to build user-centered digital solutions.
+        </p>
+    </section>
+
+    <!-- Experiência -->
+    <section class="mb-10">
+        <h2 class="section-title">
+            <span data-lang="pt">Experiência Profissional</span>
+            <span data-lang="en">Work Experience</span>
+        </h2>
+        <div class="space-y-8">
+
+            <!-- TP -->
+            <div class="job job-new">
+                <p class="company">Teleperformance (TP)</p>
+                <p class="role">
+                    <span data-lang="pt">Moderador de Conteúdo | Trust &amp; Safety — Redes Sociais</span>
+                    <span data-lang="en">Content Moderator | Trust &amp; Safety — Social Media</span>
+                </p>
+                <p class="date">
+                    <span data-lang="pt">2025 – atual · São Paulo, SP</span>
+                    <span data-lang="en">2025 – present · São Paulo, SP</span>
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
+                    <li data-lang="pt">Revisão e classificação de conteúdo gerado por usuários (UGC) aplicando políticas de uso aceitável (AUP) e community guidelines para identificar violações como discurso de ódio, desinformação e spam.</li>
+                    <li data-lang="en">Review and classification of user-generated content (UGC) by applying Acceptable Use Policies (AUP) and community guidelines to identify violations such as hate speech, misinformation, and spam.</li>
+                    <li data-lang="pt">Escalação de casos sensíveis para equipes de Trust &amp; Safety, com tomada de decisão consistente em ambiente de alto volume, KPI e monitoramento contínuo de qualidade (QA).</li>
+                    <li data-lang="en">Escalation of sensitive cases to Trust &amp; Safety teams, with consistent decision-making in a high-volume environment driven by KPIs and continuous quality monitoring (QA).</li>
+                    <li data-lang="pt">Gestão de filas de moderação via dashboards e queues internos, garantindo cumprimento de SLA e rastreamento de casos.</li>
+                    <li data-lang="en">Management of moderation queues through internal dashboards and queue tools, ensuring SLA compliance and proper case tracking.</li>
+                </ul>
+                <div class="keyword-strip">
+                    <span>Content Moderation</span>
+                    <span>Trust &amp; Safety</span>
+                    <span>Policy Enforcement</span>
+                    <span>UGC</span>
+                </div>
+            </div>
+
+            <!-- Jotacom -->
+            <div class="job">
+                <p class="company">Jotacom - The Cross Performance Agency</p>
+                <p class="role">
+                    <span data-lang="pt">Analista de Interações e Monitoramento | Social Listening</span>
+                    <span data-lang="en">Interaction & Monitoring Analyst | Social Listening</span>
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
+                    <li data-lang="pt">Monitoramento e análise de menções em redes sociais (TikTok, Instagram, X, Facebook) com foco em identificação de tendências, sentimento e oportunidades de engajamento.</li>
+                    <li data-lang="en">Monitoring and analysis of social media mentions (TikTok, Instagram, X, Facebook), focusing on trend identification, sentiment analysis, and engagement opportunities.</li>
+                    <li data-lang="pt">Desenvolvimento de brand persona, arquitetura de tags e FAQs para padronização do tom de voz e consistência nas interações digitais.</li>
+                    <li data-lang="en">Development of brand persona, tag architecture, and FAQs to standardize tone of voice and ensure consistency across digital interactions.</li>
+                    <li data-lang="pt">Gestão de crises em tempo real e elaboração de relatórios de performance (quick reports e mensais) com insights acionáveis para tomada de decisão.</li>
+                    <li data-lang="en">Real-time crisis management and performance reporting (quick reports and monthly reports) with actionable insights to support decision-making.</li>
+                </ul>
+            </div>
+
+            <!-- Atento Mídias Sociais -->
+            <div class="job">
+                <p class="company">Atento Brasil</p>
+                <p class="role">
+                    <span data-lang="pt">Analista de Mídias Sociais</span>
+                    <span data-lang="en">Social Media Analyst</span>
+                </p>
+                <p class="date">
+                    <span data-lang="pt">junho de 2018 - abril de 2024</span>
+                    <span data-lang="en">June 2018 – April 2024</span>
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
+                    <li data-lang="pt">Gestão de relacionamento digital e engajamento em campanhas nas principais redes sociais, aplicando brand persona e estratégias de Customer Experience (CX) para maximizar a satisfação e conversão.</li>
+                    <li data-lang="en">Digital relationship management and campaign engagement across major social media platforms, applying brand persona and Customer Experience (CX) strategies to maximize satisfaction and conversion.</li>
+                    <li data-lang="pt">Uso de ferramentas de CRM (Salesforce e Keepcon) para rastreamento de interações, gestão de filas de atendimento e extração de relatórios de performance.</li>
+                    <li data-lang="en">Use of CRM tools (Salesforce and Keepcon) for interaction tracking, queue management, and performance reporting.</li>
+                    <li data-lang="pt">Auditoria de qualidade (QA) e suporte ao consumidor, garantindo aderência a SLAs e padrões internos de atendimento em operação de alto volume.</li>
+                    <li data-lang="en">Quality auditing (QA) and consumer support, ensuring adherence to SLAs and internal service standards in a high-volume operation.</li>
+                </ul>
+            </div>
+
+            <!-- Atento Relacionamento Digital -->
+            <div class="job">
+                <p class="company">Atento Brasil</p>
+                <p class="role">
+                    <span data-lang="pt">Analista de Relacionamento Digital</span>
+                    <span data-lang="en">Digital Customer Engagement Analyst</span>
+                </p>
+                <p class="date">
+                    <span data-lang="pt">maio de 2017 - junho de 2018</span>
+                    <span data-lang="en">May 2017 – June 2018</span>
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
+                    <li data-lang="pt">Suporte ao cliente multicanal (chat, e-mail, telefone) com foco em resolução de problemas, retenção e satisfação do usuário (CSAT).</li>
+                    <li data-lang="en">Multichannel customer support (chat, email, phone) focused on problem resolution, retention, and user satisfaction (CSAT).</li>
+                    <li data-lang="pt">Gestão de filas de atendimento, extração de relatórios e auditorias de qualidade (QA) para garantia de SLA e performance operacional.</li>
+                    <li data-lang="en">Queue management, report extraction, and quality audits (QA) to ensure SLA compliance and operational performance.</li>
+                </ul>
+            </div>
+
+            <!-- Atento SAC -->
+            <div class="job">
+                <p class="company">Atento Brasil</p>
+                <p class="role">
+                    <span data-lang="pt">Analista de Relacionamento com o Cliente (SAC)</span>
+                    <span data-lang="en">Customer Service Analyst</span>
+                </p>
+                <p class="date">
+                    <span data-lang="pt">abril de 2016 - maio de 2017</span>
+                    <span data-lang="en">April 2016 – May 2017</span>
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
+                    <li data-lang="pt">Atendimento ativo e receptivo (cliente Sem Parar) com foco em resolução de problemas, retenção e fidelização, além de suporte e auditoria de qualidade junto à equipe.</li>
+                    <li data-lang="en">Inbound and outbound customer service (Sem Parar client) focused on problem resolution, retention, and loyalty, along with team support and quality auditing.</li>
+                </ul>
+            </div>
+
+            <!-- Alpargatas -->
+            <div class="job">
+                <p class="company">Alpargatas</p>
+                <p class="role">
+                    <span data-lang="pt">Assistente de Vendas (Temporário)</span>
+                    <span data-lang="en">Sales Assistant (Temporary)</span>
+                </p>
+                <p class="date">
+                    <span data-lang="pt">dezembro de 2013 - fevereiro de 2014</span>
+                    <span data-lang="en">December 2013 – February 2014</span>
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
+                    <li data-lang="pt">Atendimento ao público nacional e estrangeiro com foco em customer experience, conversão de vendas e organização de estoque.</li>
+                    <li data-lang="en">Customer service for domestic and international customers, focused on customer experience, sales conversion, and inventory organization.</li>
+                </ul>
+            </div>
+
+            <!-- Drastosa -->
+            <div class="job">
+                <p class="company">Drastosa S/A</p>
+                <p class="role">
+                    <span data-lang="pt">Assistente de Suporte Técnico</span>
+                    <span data-lang="en">Technical Support Assistant</span>
+                </p>
+                <p class="date">
+                    <span data-lang="pt">janeiro de 2011 - outubro de 2011</span>
+                    <span data-lang="en">January 2011 – October 2011</span>
+                </p>
+                <ul class="list-disc list-inside text-gray-700 mt-2 space-y-1 pl-4">
+                    <li data-lang="pt">Suporte técnico em hardware e software: diagnóstico, reparo e manutenção de equipamentos, instalação e configuração de redes locais (LAN/Wi-Fi) e sistemas operacionais.</li>
+                    <li data-lang="en">Hardware and software technical support: equipment diagnosis, repair and maintenance, as well as installation and configuration of local networks (LAN/Wi-Fi) and operating systems.</li>
+                </ul>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Formação -->
+    <section class="mb-10">
+        <h2 class="section-title">
+            <span data-lang="pt">Formação Acadêmica</span>
+            <span data-lang="en">Education</span>
+        </h2>
+        <div class="space-y-4">
+            <div>
+                <p class="font-bold text-gray-800">
+                    <span data-lang="pt">Análise e Desenvolvimento de Sistemas</span>
+                    <span data-lang="en">Systems Analysis and Development</span>
+                </p>
+                <p class="text-gray-600">Faculdade de Tecnologia de São Paulo - FATEC-SP</p>
+                <p class="text-sm text-gray-500">
+                    <span data-lang="pt">Conclusão prevista: dezembro de 2027</span>
+                    <span data-lang="en">Expected graduation: December 2027</span>
+                </p>
+            </div>
+            <div>
+                <p class="font-bold text-gray-800">
+                    <span data-lang="pt">UX/UI Design e Desenvolvimento Web</span>
+                    <span data-lang="en">UX/UI Design and Web Development</span>
+                </p>
+                <p class="text-gray-600">Origamid</p>
+                <p class="text-sm text-gray-500">
+                    <span data-lang="pt">Conclusão prevista: dezembro de 2026</span>
+                    <span data-lang="en">Expected completion: December 2026</span>
+                </p>
+            </div>
+            <div>
+                <p class="font-bold text-gray-800">
+                    <span data-lang="pt">Técnico em Química</span>
+                    <span data-lang="en">Chemistry Technician</span>
+                </p>
+                <p class="text-gray-600">ETEC Osasco II</p>
+                <p class="text-sm text-gray-500">
+                    <span data-lang="pt">Concluído em dezembro de 2013</span>
+                    <span data-lang="en">Completed: December 2013</span>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Competências e Idiomas -->
+    <section>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div>
+                <h2 class="section-title">
+                    <span data-lang="pt">Principais Competências</span>
+                    <span data-lang="en">Key Skills</span>
+                </h2>
+                <div class="flex flex-wrap gap-2">
+                    <!-- Moderação — roxo -->
+                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Content Moderation</span>
+                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Trust &amp; Safety</span>
+                    <span class="bg-indigo-100 text-indigo-800 text-sm font-medium px-3 py-1 rounded-full">Policy Enforcement</span>
+                    <!-- TI — verde -->
+                    <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Python</span>
+                    <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Java</span>
+                    <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Front-End</span>
+                    <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Back-End</span>
+                    <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">UX/UI Design</span>
+                    <span class="bg-emerald-100 text-emerald-800 text-sm font-medium px-3 py-1 rounded-full">Git</span>
+                    <!-- CX — cinza -->
+                    <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Social Listening</span>
+                    <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">Customer Experience</span>
+                    <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">
+                        <span data-lang="pt">Gestão de Crises</span>
+                        <span data-lang="en">Crisis Management</span>
+                    </span>
+                    <span class="bg-gray-200 text-gray-700 text-sm font-medium px-3 py-1 rounded-full">CRM (Salesforce, Keepcon)</span>
+                </div>
+
+            </div>
+            <div>
+                <h2 class="section-title">
+                    <span data-lang="pt">Idiomas</span>
+                    <span data-lang="en">Languages</span>
+                </h2>
+                <div class="text-gray-700">
+                    <p data-lang="pt">Inglês: leitura avançada de documentação técnica; comunicação oral e auditiva em nível intermediário.</p>
+                    <p data-lang="en">English: advanced reading of technical documentation; intermediate oral and listening communication.</p>
+                    <p data-lang="en" class="mt-2">Portuguese: native.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<script>
+    function setLang(lang) {
+        document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+        document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+        document.body.className = 'bg-gray-100 p-4 sm:p-8 lang-' + lang;
+        document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    }
+    setLang('pt');
+</script>
 </body>
 </html>
